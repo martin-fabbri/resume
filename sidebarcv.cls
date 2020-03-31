@@ -167,12 +167,6 @@
 	}
 }
 
-% \newcommand\skills[1]{ 
-%	\renewcommand{\skills}{
-%		{#1}
-%	}
-% }
-
 \newcommand\education[1]{ 
 	\renewcommand{\education}{
 		{#1}
@@ -325,16 +319,6 @@
 }{%
 	\end{tabular*}
 }
-
-% \newcommand{\twentyitem}[5]{%
-% 	#1&\parbox[t]{0.83\textwidth}{%
-% 		\textbf{#2}% 
-% 		\hfill%
-% 		{\footnotesize#3}\\%
-%         \ifblank{#4}{}{#4 \\}
-% 		#5\vspace{\parsep}%
-% 	}\\
-% }
 
 \newcommand{\twentyitem}[6]{%
 	#1&\parbox[t]{0.83\textwidth}{%
