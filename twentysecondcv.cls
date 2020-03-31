@@ -5,9 +5,9 @@
 %----------------------------------------------------------------------------------------
 %	 REQUIRED PACKAGES
 %-----------------------------------------------------------------------	-----------------
-
 \RequirePackage[quiet]{fontspec}
-\RequirePackage[sfdefault]{ClearSans}
+% \RequirePackage[sfdefault]{ClearSans}
+\usepackage{fontspec}
 
 \def\arrow#1{\pspicture[shift=2pt](#1,0)\psline{->}(#1,0)\endpspicture}
 
@@ -119,7 +119,9 @@
 % --------------------------------------------------------------------------------------
 % 	FONTS
 %-------------------------------------------------------------------------------------
-\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf}
+% \newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf}
+\setmainfont{Lato}
+
 
 %----------------------------------------------------------------------------------------
 %	 SIDEBAR DEFINITIONS
@@ -210,10 +212,17 @@
     \vspace{3mm}
     \renewcommand{\arraystretch}{2}
     \begin{tabular}{p{1cm} @{\hskip 0.5cm}p{5cm}}
+      \ifthenelse{\equal{\cvlocation}{}}{}{
+      	   {$
+      		\begin{array}{l}
+      		\hspace{3mm} \Large \textnormal{\faMapMarker}
+      		\end{array}
+      		$} & \cvlocation\\
+      }
       \ifthenelse{\equal{\cvnumberphone}{}}{}{
       		{$
               \begin{array}{l}
-              \hspace{4mm} \Huge \textnormal{\faMobile} 
+              \hspace{4mm} \LARGE \textnormal{\faMobile} 
               \end{array}
               $} 
             & \cvnumberphone\\}
@@ -221,14 +230,14 @@
       \ifthenelse{\equal{\cvsite}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{2.8mm} \huge \textnormal{\textcolor{test}{\faGlobe}}
+              \hspace{2.8mm} \Large \textnormal{\textcolor{test}{\faGlobe}}
               \end{array}
               $} 
             & \href{http://\cvsite}{\cvsite} \\}
       \ifthenelse{\equal{\cvmail}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{2.5mm} \huge \textnormal{\textcolor{black}{\faEnvelopeO}}
+              \hspace{2.5mm} \Large \textnormal{\textcolor{black}{\faEnvelopeO}}
               \end{array}
               $} 
             & \href{mailto:\cvmail}{\cvmail} \\}
@@ -236,25 +245,17 @@
        \ifthenelse{\equal{\cvlinkedin}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{3mm} \huge \textnormal{\textcolor{linkedin}{\faLinkedin}}
+              \hspace{3mm} \Large \textnormal{\textcolor{linkedin}{\faLinkedin}}
               \end{array}
               $} & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin} \\
             }  
         \ifthenelse{\equal{\cvgithub}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{3mm} \huge \textnormal{\faGithub}
+              \hspace{3mm} \Large \textnormal{\faGithub}
               \end{array}
               $} & \href{https://www.github.com/\cvgithub}{\cvgithub} \\
             }   
-        
-        \ifthenelse{\equal{\cvlocation}{}}{}{
-        	{$
-        		\begin{array}{l}
-        		\hspace{3mm} \huge \textnormal{\faGithub}
-        		\end{array}
-        		$} & \cvlocation\\
-        	}
               
     \end{tabular}
 
@@ -295,9 +296,9 @@
 	\tikz[baseline=(char.base)]\node[anchor=north west, draw,rectangle, rounded corners, inner sep=1.6pt, minimum size=5.5mm, text height=3.6mm, fill=#2,#2,text=white](char){#1};%
 }
 
-\def\@sectioncolor#1#2#3{%
+\def\@sectioncolor{%
 	{%
-		\color{pblue} #1#2#3%
+		\color{black}%
 	}%
 }
 
@@ -305,7 +306,7 @@
 \renewcommand{\section}[1]{
   \par\vspace{\parskip}
 	{%
-		\LARGE\headingfont\color{headercolor}%
+		\LARGE\color{headercolor}%
 		\@sectioncolor #1%
 	}
   \par\vspace{1mm}
@@ -313,7 +314,7 @@
 
 \renewcommand{\subsection}[1]{
 	\par\vspace{.5\parskip}{%
-		\Large\headingfont\color{headercolor} #1%
+		\Large\color{headercolor} #1%
 	}
 	\par\vspace{.25\parskip}%
 }
