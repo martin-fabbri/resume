@@ -1,4 +1,4 @@
-\ProvidesClass{twentysecondcv}[2015/02/28 CV class]
+\ProvidesClass{ml}[2015/02/28 CV class]
 \LoadClass{article}
 \NeedsTeXFormat{LaTeX2e}
 
@@ -167,11 +167,11 @@
 	}
 }
 
-\newcommand\career[1]{ 
-	\renewcommand{\career}{
-		{#1}
-	}
-}
+% \newcommand\skills[1]{ 
+%	\renewcommand{\skills}{
+%		{#1}
+%	}
+% }
 
 \newcommand\education[1]{ 
 	\renewcommand{\education}{
@@ -258,20 +258,13 @@
               
     \end{tabular}
 
-    %------------------------------------------------
-    \vspace{3mm}
-    \profilesection{Technical Skills}{1.2cm}
-    
-    {\large \textbf{Overview}}
-
-	\skills
 
  %------------------------------------------------
          
         \vspace{3mm}
-        \profilesection{Career Summary}{0.8cm} 
+        \profilesection{Skills}{0.8cm} 
         
-        \career
+        \skills
         
         %------------------------------------------------
          
