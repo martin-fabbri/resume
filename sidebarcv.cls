@@ -6,13 +6,14 @@
 %	 REQUIRED PACKAGES
 %-----------------------------------------------------------------------	-----------------
 \RequirePackage[quiet]{fontspec}
+\RequirePackage{microtype}
 % \RequirePackage[sfdefault]{ClearSans}
 \usepackage{fontspec}
 
 \def\arrow#1{\pspicture[shift=2pt](#1,0)\psline{->}(#1,0)\endpspicture}
 
 \usepackage{pstricks}
-
+\usepackage{microtype}
 \usepackage{fontawesome}
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
@@ -104,7 +105,7 @@
   \colorlet{header}{gray}
 \fi
 \colorlet{textcolor}{gray}
-\colorlet{headercolor}{gray}
+\colorlet{headercolor}{black}
 
 %----------------------------------------------------------------------------------------
 %	 MISC CONFIGURATIONS
@@ -297,6 +298,9 @@
 	}
   \par\vspace{1mm}
 }
+
+% \titleformat{\section}{\large}{\thesection}{1em}{}
+% \titlespacing{\section}{0pt}{2.5ex}{2.5ex}
 
 \renewcommand{\subsection}[1]{
 	\par\vspace{.5\parskip}{%
